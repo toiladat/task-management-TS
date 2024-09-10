@@ -1,0 +1,15 @@
+"ts-node": "^10.9.2":dùng biên dịch ngầm file ts sang js và chạy luôn chứ không cần gõ đến đâu biên dịch thành js đến đấy
+  khi đẩy lên server mới cần biên dịch thành js vì server chỉ run được js thôi
+
+"@types/express": "^4.17.21" : sử dụng typescrpit trpng express 
+
+"@types/node": "^22.5.4": sử dụng typescript trong nodejs
+
+
+export default khi khai báo biến trước rồi export default ra biến ở bên file import sẽ không cần {}
+1 file chỉ có 1 export default
+-- const a=()=>{}
+-- export default a;
+
+export khi khai báo biến thì gán luôn hàm hoặc giá tri vào biến ở bên file import thì phải có {}
+-- export const a =()=>{}
