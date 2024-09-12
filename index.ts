@@ -1,33 +1,35 @@
-import { log } from 'console';
 
 import express, { Express, Request, Response } from "express";
+import cors from "cors"
+import bodyParser from "body-parser";
+import {routeApi} from "./routes/client/index.route"
+
 import dotenv from "dotenv"
 dotenv.config()
 
-import connectDatabase from './config/database'
-import Task from "./models/task.models";
-connectDatabase()
 
 const app: Express = express()
 const port: string | number = process.env.PORT
 
-app.get('/tasks', async (req: Request, res: Response) => {
-  const tasks = await Task.find({})
-  res.json(tasks)
-})
+import connectDatabase from './config/database'
+connectDatabase()
 
-app.get('/tasks/detail/:id', async (req: Request, res: Response) => {
-  const id = req.params.id  
-  const task = await Task.findOne({
-    _id: id,
-    deleted:false
-  }
-  )
+//CORS
+//cach 1: Tat ca cac ten mien duoc phep truy cap
+app.use(cors())
 
-  res.json(task)
-})
+//cach 2: ap dung cho 1 ten mien cu the
+// const corsOptions={
+//   origin:'ten mien tai day',
+//   optionsSuccessStatus:200
+// }
+// app.use(cors(corsOptions))
+
+//END CORS
+app.use(bodyParser.json())
 
 
+routeApi(app)
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);

@@ -5,6 +5,8 @@
 
 "@types/node": "^22.5.4": sử dụng typescript trong nodejs
 
+// dung $in khi id la 1 record, khi tim 1 id trong db theo list ds cua min
+// listid: id => khi id la id nguoi dung, khi ktra nhung list nao co id minh cho 
 
 export default khi khai báo biến trước rồi export default ra biến ở bên file import sẽ không cần {}
 1 file chỉ có 1 export default
