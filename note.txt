@@ -15,3 +15,4 @@ export default khi khai báo biến trước rồi export default ra biến ở 
 
 export khi khai báo biến thì gán luôn hàm hoặc giá tri vào biến ở bên file import thì phải có {}
 -- export const a =()=>{}
+dat
